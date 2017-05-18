@@ -132,6 +132,7 @@ Contains icons for Firemacs.
 ** nsprefbranch
 Should replace with [[https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Comparison_with_XUL_XPCOM_extensions#Settings][settings API]]
 Also settings data data should be stored using the [[https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/storage][storage API]]
+*** TODO add [storage] to manifest =permissions= field
 * Tooling
 #+BEGIN_SRC shell :tangle build-directories.sh
   #! /bin/sh
