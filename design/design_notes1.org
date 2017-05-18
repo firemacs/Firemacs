@@ -35,6 +35,7 @@ The content script executes commands on keypress events based on the =currentSta
 #+END_SRC
 
 The Options Pages will send the message =updateState= to the background pages.
+
 *** Browser Action Files
  Browser action files add buttons to the toolbar. It is likely that these will not be used.
 ** TODO Web Accessible Resources
@@ -128,6 +129,9 @@ The current state might use the =commands API= for functions.
 * TODO Description of Existing code base
 ** chrome/skin
 Contains icons for Firemacs.
+** nsprefbranch
+Should replace with [[https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Comparison_with_XUL_XPCOM_extensions#Settings][settings API]]
+Also settings data data should be stored using the [[https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/storage][storage API]]
 * Tooling
 #+BEGIN_SRC shell :tangle build-directories.sh
   #! /bin/sh
