@@ -41,27 +41,28 @@ This code was commented out but could be required. It appears to be related to s
 The overall layout follows Kazu's original design.
 #+NAME: config-body
 #+BEGIN_SRC html :noweb tangle
-    <body>
-      <div id="main">
+      <body>
+        <form id="main">
 
-       <<main-glue>>
-  <!--
-        <<tab-about>>
+         <<main-glue>>
 
-        <<tab-option>>
+          <<tab-about>>
+  <!--  
+          <<tab-option>>
 
-        <<tab-view>>
+          <<tab-view>>
 
-        <<tab-edit>>
+          <<tab-edit>>
 
-        <<tab-common>>
-
-        <<tab-menu>>
-
-        <<main-footer>>
+          <<tab-common>>
   -->
-      </div> 
-    </body>
+          <<tab-menu>>
+
+          <<main-footer>>
+
+
+        </form> 
+      </body>
 #+END_SRC
 
 ** TODO Main glue
@@ -77,6 +78,7 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
     <button class="tablinks" onclick="openTab(e, 'menu')"> Menu</button>
   </div>
 #+END_SRC
+*** TODO generate main-glue-js
 #+NAME: main-glue-js
 #+BEGIN_SRC javascript 
   function openTab(event, tabName) {
@@ -99,30 +101,31 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
       event.currentTarget.className += " active";
   }
 #+END_SRC
-*** TODO generate main-glue-js
 ** TODO tab-about
 #+NAME: tab-about
 #+BEGIN_SRC html
-        <div id="about">
-	    <description>Firemacs is written by Kazu YAMAMOTO &lt;kazu@Mew.org&gt;.</description>
-	    <description>Its home page is: http://www.mew.org/~kazu/proj/firemacs/</description>
-	    <separator />
-	    <description>'M-' is 'C-['.</description>
-	    <description>'ESC' or 'Alt' or 'Meta' can be used as 'M-' if checked in Option tab.</description>
-	    <separator />
-	    <description>Unix: Alt is Alt, Meta is Meta.</description>
-	    <description>Mac: Alt is Option, Meta is Apple. Option inserts an accent letter, so cannot be used.</description>
-	    <description>Windows: Alt is Alt, Meta is Windows. To use Alt, set ui.key.menuAccessKey to 0.</description>
-	    <separator />
-	    <description>Remove key symbols from forms to disable their key bindings.</description>
-	    <description>Arrow keys are specified with 'up', 'down', 'right', and 'left'.</description>
-	    <description>'C-M-' should be specified instead of 'M-C-'.</description>
-</div>
+    <div id="about" class="tabcontent">
+      <p>Firemacs was written by Kazu Yamamoto. Support was moved to <a href="https://github.com/firemacs">Github</a> in order to transition Firemacs to a WebExtension.</p>
+      <!--    
+              <p>The original home page is: http://www.mew.org/~kazu/proj/firemacs/</p> 
+      -->
+      <p />
+      <p>'M-' is 'C-['.</p>
+      <p>'ESC' or 'Alt' or 'Meta' can be used as 'M-' if checked in Option tab.</p>
+      <p />
+      <p>Unix: Alt is Alt, Meta is Meta.</p>
+      <p>Mac: Alt is Option, Meta is Apple. Option inserts an accent letter, so cannot be used.</p>
+      <p>Windows: Alt is Alt, Meta is Windows. To use Alt, set ui.key.menuAccessKey to 0.</p>
+      <p />
+      <p>Remove key symbols from forms to disable their key bindings.</p>
+      <p>Arrow keys are specified with 'up', 'down', 'right', and 'left'.</p>
+      <p>'C-M-' should be specified instead of 'M-C-'.</p>
+    </div>
 #+END_SRC
 ** TODO tab-option 
 #+NAME: tab-option
 #+BEGIN_SRC html
-<div id="option">
+<div id="option" class="tabcontent">
       <tabpanel equalsize="always">
         <grid flex="1">
           <columns>
@@ -170,7 +173,7 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
 ** TODO tab-view
 #+NAME:tab-view
 #+BEGIN_SRC html
-<div id="view">
+<div id="view" class="tabcontent">
       <tabpanel equalsize="always">
         <grid flex="1">
           <columns>
@@ -270,7 +273,7 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
 ** TODO tab-edit
 #+NAME: tab-edit
 #+BEGIN_SRC html
- <div id="edit">
+ <div id="edit" class="tabcontent">
      <tabpanel equalsize="always">
         <grid flex="1">
           <columns>
@@ -398,7 +401,7 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
 ** TODO tab-common
 #+NAME: tab-common
 #+BEGIN_SRC html
-<div id="common">
+<div id="common" class="tabcontent">
      <tabpanel equalsize="always">
         <grid flex="1">
           <columns>
@@ -538,33 +541,27 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
 ** TODO tab-menu
 #+NAME: tab-menu
 #+BEGIN_SRC html
-<div id="menu">
-    <tabpanel equalsize="always">
-      <grid flex="1">
-        <columns>
-          <column />
-          <column />
-        </columns>
-        <rows>
-          <row>
-            <textbox id="PreviousCompletion" value="C-p" />
-            <description value="moves to the previous line" />
-          </row>
-          <row>
-            <textbox id="NextCompletion" value="C-n" />
-            <description value="moves to the next line" />
-          </row>
-        </rows>
-      </grid>
-    </tabpanel>
-</div>
+  <div id="menu" class="tabcontent">
+    <p>
+      <input class="configvalue" id="PreviousCompletion" value="C-p" />
+      <label>moves to the previous line</label>
+    </p>
+    <p>
+      <input class="configvalue" id="NextCompletion" value="C-n" />
+      <label>moves to the next line</label>
+    </p>
+  </div>
 #+END_SRC
 ** TODO main-footer
 #+NAME: main-footer
 #+BEGIN_SRC html
-  <hbox>
-    <spacer flex="1"/>
-    <button label="Cancel" oncommand="window.close();" />
-    <button label="Save" oncommand="FmxConfig.save(); window.close();" />
+  <div id="footer">
+    <hr/>
+    <button oncommand="window.close();"/>Close</button>
+    <button oncommand="FmxConfig.save(); window.close();">Save</button>
+  </div>
 #+END_SRC
+*** TODO change oncommand to onClick
+Not done to keep from accidentally closing while working elsewhere.
+*** TODO Figure out FmxConfig.save() function
 
