@@ -19,8 +19,8 @@ This document is a port of chrome/content/config.xul
     <title>Firemacs configuration</title>
     <link rel="stylesheet" href="config.css">
     <<head-commented-out>>
-    <script src="config.js"/>
-    <script src="config-name.js"/>
+    <script src="config.js"></script>
+    <script src="config-name.js"></script>
   </head>
 #+END_SRC
 ** Commented out
@@ -41,27 +41,27 @@ This code was commented out but could be required. It appears to be related to s
 The overall layout follows Kazu's original design.
 #+NAME: config-body
 #+BEGIN_SRC html :noweb tangle
-  <body>
-    <div id="main">
+    <body>
+      <div id="main">
 
-     <<main-glue>>
+       <<main-glue>>
+  <!--
+        <<tab-about>>
 
-      <<tab-about>>
+        <<tab-option>>
 
-      <<tab-option>>
+        <<tab-view>>
 
-      <<tab-view>>
+        <<tab-edit>>
 
-      <<tab-edit>>
+        <<tab-common>>
 
-      <<tab-common>>
+        <<tab-menu>>
 
-      <<tab-menu>>
-
-      <<main-footer>>
-
-    </div> 
-  </body>
+        <<main-footer>>
+  -->
+      </div> 
+    </body>
 #+END_SRC
 
 ** TODO Main glue
@@ -78,7 +78,7 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
   </div>
 #+END_SRC
 #+NAME: main-glue-js
-#+BEGIN_SRC javascript
+#+BEGIN_SRC javascript 
   function openTab(event, tabName) {
       var i, tabcontent, tablinks;
       //get all elements with class="tabcontent" and hide them
@@ -99,6 +99,7 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
       event.currentTarget.className += " active";
   }
 #+END_SRC
+*** TODO generate main-glue-js
 ** TODO tab-about
 #+NAME: tab-about
 #+BEGIN_SRC html
