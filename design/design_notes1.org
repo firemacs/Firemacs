@@ -2,7 +2,9 @@
 * Architecture
 This document is based on Mozilla's [[https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Anatomy_of_a_WebExtension][Anatomy of a WebExtension]]. It describes a possible architecture for the revised Firemacs
 ** TODO Background pages
-The background page implements long running logic.
+#+BEGIN_SRC shell :tangle ../background_pages/readme
+  The background page implements long running logic.
+#+END_SRC
 *** Premise
 Suppose the background pages hold only the configuration, i.e. the state for Firemacs.
 *** Messages
@@ -12,7 +14,10 @@ The background page sends the message =currentState=.
 
 The background page responds to =updateState= from the Options Pages.
 ** TODO Content scripts 
-Content scripts interact with web pages and exchange messages with background pages. They cannot interact with page scripts.
+#+BEGIN_SRC shell :tangle ../content_scripts/readme
+  Content scripts interact with web pages and exchange messages
+  with background pages. They cannot interact with page scripts.
+#+END_SRC
 
 It is envisioned that the bulk of the application will be in the content script because there is little state in the Firemacs application.
 
@@ -25,18 +30,30 @@ The content script listens for keypress events.
 
 The content script executes commands on keypress events based on the =currentState=.
 ** TODO Options Pages
-Option pages provide a user interface for configuring the add-on.
+#+BEGIN_SRC shell :tangle ../options_pages/readme
+  Option pages provide a user interface for configuring the add-on.
+#+END_SRC
 
 The Options Pages will send the message =updateState= to the background pages.
 *** Browser Action Files
  Browser action files add buttons to the toolbar. It is likely that these will not be used.
 ** TODO Web Accessible Resources
-Web Accessible Resources include HTML, CSS, and Javascript available to both content and page scripts. 
+#+BEGIN_SRC shell :tangle ../web_accessible_resources/readme
+  Web Accessible Resources include HTML, CSS, and Javascript 
+  available to both content and page scripts. 
+#+END_SRC
+
 ** Components not likely to be used
 *** Page Action Files
- Page Action Files add buttons to the address bar. It is likely that these will not be used.
+#+BEGIN_SRC shell :tangle ../page_action_files/readme
+  Page Action Files add buttons to the address bar.
+#+END_SRC
+ It is likely that these will not be used.
 *** Sidebar Files
- Sidebar Files add a side bar to the browser. It is likely that these will not be used.
+#+BEGIN_SRC shell :tangle ../sidebar_files/readme
+  Sidebar Files add a side bar to the browser.
+#+END_SRC
+It is likely that these will not be used.
 * Component Sketches
 ** TODO manifest.json
 The API for the [[https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json][manifest]].
@@ -111,3 +128,13 @@ The current state might use the =commands API= for functions.
 * TODO Description of Existing code base
 ** chrome/skin
 Contains icons for Firemacs.
+* Tooling
+#+BEGIN_SRC shell :tangle build-directories.sh
+  #! /bin/sh
+  mkdir background_pages
+  mkdir content_scripts
+  mkdir options_pages
+  mkdir web_accessible_resources
+  mkdir page_action_files
+  mkdir sidebar_files
+#+END_SRC
