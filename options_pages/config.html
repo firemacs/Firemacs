@@ -181,132 +181,114 @@
                   </grid>
                 </tabpanel>
           </div>
-  
-           <div id="edit" class="tabcontent">
-               <tabpanel equalsize="always">
-                  <grid flex="1">
-                    <columns>
-                      <column />
-                      <column />
-                    </columns>
-                    <rows>
-                      <row>
-                        <textbox id="PreviousLine" value="C-p" />
-                        <description value="moves to the previous line/input" />
-                      </row>
-                      <row>
-                        <textbox id="NextLine" value="C-n" />
-                        <description value="moves to the next line/input" />
-                      </row>
-                      <row>
-                        <textbox id="PreviousChar" value="C-b" />
-                        <description value="moves to the previous char" />
-                      </row>
-                      <row>
-                        <textbox id="NextChar" value="C-f" />
-                        <description value="moves to the next char" />
-                      </row>
-                      <row>
-                        <textbox id="ArrowPreviousLine" value="up" />
-                        <description value="moves to the previous line/input" />
-                      </row>
-                      <row>
-                        <textbox id="ArrowNextLine" value="down" />
-                        <description value="moves to the next line/input" />
-                      </row>
-                      <row>
-                        <textbox id="ArrowPreviousChar" value="left" />
-                        <description value="moves to the previous char" />
-                      </row>
-                      <row>
-                        <textbox id="ArrowNextChar" value="right" />
-                        <description value="moves to the next char" />
-                      </row>
-                      <row>
-                        <textbox id="BeggingOfLine" value="C-a" />
-                        <description value="moves to the beg of the line" />
-                      </row>
-                      <row>
-                        <textbox id="EndOfLine" value="C-e" />
-                        <description value="moves to the end of the line" />
-                      </row>
-                      <row>
-                        <textbox id="SetMark" value="C-SPC" />
-                        <description value="puts the mark" />
-                      </row>
-                      <row>
-                        <textbox id="SetMarkAlias" value="C-i" />
-                        <description value="puts the mark" />
-                      </row>
-                      <row>
-                        <textbox id="KillRegion" value="C-w" />
-                        <description value="kills the region" />
-                      </row>
-                    </rows>
-                  </grid>
-                  <grid flex="1">
-                    <columns>
-                      <column />
-                      <column />
-                    </columns>
-                    <rows>
-                      <row>
-                        <textbox id="KillLineForward" value="C-k" />
-                        <description value="kills the line forward" />
-                      </row>
-                      <row>
-                        <textbox id="KillLineBackward" value="C-u" />
-                        <description value="kills the line backward" />
-                      </row>
-                      <row>
-                        <textbox id="Paste" value="C-y" />
-                        <description value="pastes the copy buf" />
-                      </row>
-                      <row>
-                        <textbox id="DeleteCharForward" value="C-d" />
-                        <description value="deletes the next char" />
-                      </row>
-                      <row>
-                        <textbox id="DeleteCharBackward" value="C-h" />
-                        <description value="deletes the previous char" />
-                      </row>
-                      <row>
-                        <textbox id="Undo" value="C-xu" />
-                        <description value="executes undo" />
-                      </row>
-                      <row>
-                        <textbox id="OpenLine" value="C-o" />
-                        <description value="open one line" />
-                      </row>
-                      <row>
-                        <textbox id="NextWord" value="M-f" />
-                        <description value="moves to the next word" />
-                      </row>
-                      <row>
-                        <textbox id="PreviousWord" value="M-b" />
-                        <description value="moves to the previous word" />
-                      </row>
-                      <row>
-                        <textbox id="DeleteWordForward" value="M-d" />
-                        <description value="deletes a word forward" />
-                      </row>
-                      <row>
-                        <textbox id="DeleteWordBackward" value="M-DEL" />
-                        <description value="deletes a word backward" />
-                      </row>
-                      <row>
-                        <textbox id="MoveTop" value="M-&lt;" />
-                        <description value="moves to the top" />
-                      </row>
-                      <row>
-                        <textbox id="MoveBottom" value="M-&gt;" />
-                        <description value="moves to the bottom" />
-                      </row>
-                    </rows>
-                  </grid>
-                </tabpanel>
-          </div>
   -->
+          <div id="edit" class="tabcontent">
+            <p>
+              <input class="configvalue" id="PreviousLine" value="C-p" />
+              <label>moves to the previous line/input </label>
+            </p>
+            <p>
+              <input class="configvalue" id="NextLine" value="C-n" />
+              <label>moves to the next line/input </label>
+            </p>
+            <p>
+              <input class="configvalue" id="PreviousChar" value="C-b" />
+              <label>moves to the previous char </label>
+            </p>
+            <p>
+              <input class="configvalue" id="NextChar" value="C-f" />
+              <label>moves to the next char </label>
+            </p>
+            <p>
+              <input class="configvalue" id="ArrowPreviousLine" value="up" />
+              <label>moves to the previous line/input </label>
+            </p>
+            <p>
+              <input class="configvalue" id="ArrowNextLine" value="down" />
+              <label>moves to the next line/input </label>
+            </p>
+            <p>
+              <input class="configvalue" id="ArrowPreviousChar" value="left" />
+              <label>moves to the previous char </label>
+            </p>
+            <p>
+              <input class="configvalue" id="ArrowNextChar" value="right" />
+              <label>moves to the next char </label>
+            </p>
+            <p>
+              <input class="configvalue" id="BeggingOfLine" value="C-a" />
+              <label>moves to the beg of the line </label>
+            </p>
+            <p>
+              <input class="configvalue" id="EndOfLine" value="C-e" />
+              <label>moves to the end of the line </label>
+            </p>
+            <p>
+              <input class="configvalue" id="SetMark" value="C-SPC" />
+              <label>puts the mark </label>
+            </p>
+            <p>
+              <input class="configvalue" id="SetMarkAlias" value="C-i" />
+              <label>puts the mark </label>
+            </p>
+            <p>
+              <input class="configvalue" id="KillRegion" value="C-w" />
+              <label>kills the region </label>
+            </p>
+            <p>
+              <input class="configvalue" id="KillLineForward" value="C-k" />
+              <label>kills the line forward </label>
+            </p>
+            <p>
+              <input class="configvalue" id="KillLineBackward" value="C-u" />
+              <label>kills the line backward </label>
+            </p>
+            <p>
+              <input class="configvalue" id="Paste" value="C-y" />
+              <label>pastes the copy buf </label>
+            </p>
+            <p>
+              <input class="configvalue" id="DeleteCharForward" value="C-d" />
+              <label>deletes the next char </label>
+            </p>
+            <p>
+              <input class="configvalue" id="DeleteCharBackward" value="C-h" />
+              <label>deletes the previous char </label>
+            </p>
+            <p>
+              <input class="configvalue" id="Undo" value="C-xu" />
+              <label>executes undo </label>
+            </p>
+            <p>
+              <input class="configvalue" id="OpenLine" value="C-o" />
+              <label>open one line </label>
+            </p>
+            <p>
+              <input class="configvalue" id="NextWord" value="M-f" />
+              <label>moves to the next word </label>
+            </p>
+            <p>
+              <input class="configvalue" id="PreviousWord" value="M-b" />
+              <label>moves to the previous word </label>
+            </p>
+            <p>
+              <input class="configvalue" id="DeleteWordForward" value="M-d" />
+              <label>deletes a word forward </label>
+            </p>
+            <p>
+              <input class="configvalue" id="DeleteWordBackward" value="M-DEL" />
+              <label>deletes a word backward </label>
+            </p>
+            <p>
+              <input class="configvalue" id="MoveTop" value="M-&lt;" />
+              <label>moves to the top </label>
+            </p>
+            <p>
+              <input class="configvalue" id="MoveBottom" value="M-&gt;" />
+              <label>moves to the bottom </label>
+            </p>
+          </div>
+  
           <div id="common" class="tabcontent">
             <p>
               <input class="configvalue" id="AllTabs" value="C-xb" />
