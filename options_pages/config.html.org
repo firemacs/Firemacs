@@ -47,11 +47,11 @@ The overall layout follows Kazu's original design.
          <<main-glue>>
 
           <<tab-about>>
-  <!--  
+  <!--    -->
           <<tab-option>>
 
           <<tab-view>>
-  -->
+
           <<tab-edit>>
 
           <<tab-common>>
@@ -125,156 +125,48 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
 ** TODO tab-option 
 #+NAME: tab-option
 #+BEGIN_SRC html
-<div id="option" class="tabcontent">
-      <tabpanel equalsize="always">
-        <grid flex="1">
-          <columns>
-            <column />
-            <column />
-          </columns>
-          <rows>
-            <row>
-              <checkbox id="UseEscape" checked="true" />
-              <description value="use ESC as 'M-'" />
-            </row>
-            <row>
-              <checkbox id="UseAlt" checked="true" />
-              <description value="use Alt as 'M-'" />
-            </row>
-            <row>
-              <checkbox id="UseMeta" checked="false" />
-              <description value="use Meta as 'M-'" />
-            </row>
-            <row>
-              <textbox id="XPrefix" value="C-x" />
-              <description value="is the prefix key" />
-            </row>
-            <row>
-              <textbox id="AccessRegex" value="wiki" />
-              <description value="URL regex to disable access keys" />
-            </row>
-            <row>
-              <textbox id="TurnoffRegex" value="" />
-              <description value="URL regex to turn off Firemacs" />
-            </row>
-            <row>
-              <checkbox id="WalkForm" checked="true" />
-              <description value="allow to walk through forms" />
-            </row>
-            <row>
-              <checkbox id="EditOnly" checked="false" />
-              <description value="edit area only" />
-            </row>
-          </rows>
-        </grid>
-      </tabpanel>
-</div>
-#+END_SRC
-** TODO tab-view
-#+NAME:tab-view
-#+BEGIN_SRC html
-<div id="view" class="tabcontent">
-      <tabpanel equalsize="always">
-        <grid flex="1">
-          <columns>
-            <column />
-            <column />
-          </columns>
-          <rows>
-            <row>
-              <textbox id="ScrollLineUp" value="C-p" />
-              <description value="scrolls a line up" />
-            </row>
-            <row>
-              <textbox id="ScrollLineDown" value="C-n" />
-              <description value="scrolls a line down" />
-            </row>
-            <row>
-              <textbox id="PreviousTab" value="C-b" />
-              <description value="moves to the previous tab" />
-            </row>
-            <row>
-              <textbox id="NextTab" value="C-f" />
-              <description value="moves to the next tab" />
-            </row>
-            <row>
-              <textbox id="ViScrollLineUp" value="k" />
-              <description value="scrolls a line up" />
-            </row>
-            <row>
-              <textbox id="ViScrollLineDown" value="j" />
-              <description value="scrolls a line down" />
-            </row>
-            <row>
-              <textbox id="ViScrollLeft" value="H" />
-              <description value="scrolls left" />
-            </row>
-            <row>
-              <textbox id="ViScrollRight" value="L" />
-              <description value="scrolls right" />
-            </row>
-            <row>
-              <textbox id="ViPreviousTab" value="h" />
-              <description value="moves to the previous tab" />
-            </row>
-            <row>
-              <textbox id="ViNextTab" value="l" />
-              <description value="moves to the next tab" />
-            </row>
-            <row>
-              <textbox id="ViScrollPageUp" value="b" />
-              <description value="scrolls a page up" />
-            </row>
-            <row>
-              <textbox id="ViScrollPageDown" value="u" />
-              <description value="scrolls a page down" />
-            </row>
-            <row>
-              <textbox id="PreviousPage" value="B" />
-              <description value="moves to the previous page" />
-            </row>
-          </rows>
-        </grid>
-        <grid flex="1">
-          <columns>
-            <column />
-            <column />
-          </columns>
-          <rows>
-            <row>
-              <textbox id="NextPage" value="F" />
-              <description value="moves to the next page" />
-            </row>
-            <row>
-              <textbox id="ReloadPage" value="R" />
-              <description value="reloads the page" />
-            </row>
-            <row>
-              <textbox id="ViScrollTop" value="&lt;" />
-              <description value="scrolls to the top" />
-            </row>
-            <row>
-              <textbox id="ViScrollBottom" value="&gt;" />
-              <description value="scrolls to the bottom" />
-            </row>
-            <row>
-              <textbox id="ScrollTop" value="M-&lt;" />
-              <description value="scrolls to the top" />
-            </row>
-            <row>
-              <textbox id="ScrollBottom" value="M-&gt;" />
-              <description value="scrolls to the bottom" />
-            </row>
-          </rows>
-        </grid>
-      </tabpanel>
-</div>
+  <div id="option" class="tabcontent">
+    <p>These are high level global settings for Firemacs.</p>
+    <p>
+      <input type="checkbox" class="configvalue" id="UseEscape" value="true" />
+      <label>use ESC as 'M-' </label>
+    </p>
+    <p>
+      <input type="checkbox" class="configvalue" id="UseAlt" value="true" />
+      <label>use Alt as 'M-' </label>
+    </p>
+    <p>
+      <input type="checkbox" class="configvalue" id="UseMeta" value="false" />
+      <label>use Meta as 'M-' </label>
+    </p>
+    <p>
+      <input class="configvalue" id="XPrefix" value="C-x" />
+      <label>is the prefix key </label>
+    </p>
+    <p>
+      <input class="configvalue" id="AccessRegex" value="wiki" />
+      <label>URL regex to disable access keys </label>
+    </p>
+    <p>
+      <input class="configvalue" id="TurnoffRegex" value="" />
+      <label>URL regex to turn off Firemacs </label>
+    </p>
+    <p>
+      <input type="checkbox" class="configvalue" id="WalkForm" value="true" />
+      <label>allow to walk through forms </label>
+    </p>
+    <p>
+      <input type="checkbox" class="configvalue" id="EditOnly" value="false" />
+      <label>edit area only </label>
+    </p>
+  </div>
 #+END_SRC
 ** TODO tab-edit
+There is some modal binding between editing and viewing for example =C-p= is =PreviousLine= when editing text and =ScrollLineUp= when viewing portions of a web page.
 #+NAME: tab-edit
 #+BEGIN_SRC html
   <div id="edit" class="tabcontent">
-    <p>This tab contains many common Emacs commands for editing text</p>
+    <p>This tab contains many common Emacs commands for editing text. The are useful inside of fields containing editable text.</p>
     <p>
       <input class="configvalue" id="PreviousLine" value="C-p" />
       <label>moves to the previous line/input </label>
@@ -379,6 +271,90 @@ See this [[https://www.w3schools.com/howto/howto_js_tabs.asp][example]] for crea
       <input class="configvalue" id="MoveBottom" value="M-&gt;" />
       <label>moves to the bottom </label>
     </p>
+  </div>
+#+END_SRC
+** TODO tab-view
+#+NAME:tab-view
+#+BEGIN_SRC html
+  <div id="view" class="tabcontent">
+    <p>These commands work on the "passive elements" of a web page. For example they are useful while reading content. And navigating a web page or the browser's tabs.</p>
+    <p>
+      <input class="configvalue" id="ScrollLineUp" value="C-p" />
+      <label>scrolls a line up </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ScrollLineDown" value="C-n" />
+      <label>scrolls a line down </label>
+    </p>
+    <p>
+      <input class="configvalue" id="PreviousTab" value="C-b" />
+      <label>moves to the previous tab </label>
+    </p>
+    <p>
+      <input class="configvalue" id="NextTab" value="C-f" />
+      <label>moves to the next tab </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViScrollLineUp" value="k" />
+      <label>scrolls a line up </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViScrollLineDown" value="j" />
+      <label>scrolls a line down </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViScrollLeft" value="H" />
+      <label>scrolls left </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViScrollRight" value="L" />
+      <label>scrolls right </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViPreviousTab" value="h" />
+      <label>moves to the previous tab </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViNextTab" value="l" />
+      <label>moves to the next tab </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViScrollPageUp" value="b" />
+      <label>scrolls a page up </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViScrollPageDown" value="u" />
+      <label>scrolls a page down </label>
+    </p>
+    <p>
+      <input class="configvalue" id="PreviousPage" value="B" />
+      <label>moves to the previous page </label>
+    </p>
+    <p>
+      <input class="configvalue" id="NextPage" value="F" />
+      <label>moves to the next page </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ReloadPage" value="R" />
+      <label>reloads the page </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViScrollTop" value="&lt;" />
+      <label>scrolls to the top </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ViScrollBottom" value="&gt;" />
+      <label>scrolls to the bottom </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ScrollTop" value="M-&lt;" />
+      <label>scrolls to the top </label>
+    </p>
+    <p>
+      <input class="configvalue" id="ScrollBottom" value="M-&gt;" />
+      <label>scrolls to the bottom </label>
+    </p>
+
   </div>
 #+END_SRC
 ** TODO tab-common
