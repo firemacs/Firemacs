@@ -1,0 +1,5 @@
+Firemacs is a wineware. You may use and modify firemacs. But if you want to request a new feature, you should give the author a bottle of good wine. :-)
+
+The early versions of Firemacs was implemented based on mozless. I would thank the author of mozless.
+
+The icon was drawn by Mr. Ohkouchi. Thanks!
