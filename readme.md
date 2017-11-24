@@ -1,3 +1,6 @@
+# Status
+Firemacs does not work with Firefox Quantum. It works with Firefox-Extended Support Release [Firefox-ESR](https://www.mozilla.org/en-US/firefox/organizations/). 
+
 ## Introduction
 
 This repository exists to support the Firemacs Github organization. The purpose of the Firemacs Github organization is to support Firemacs. The motivation for creating a Firemacs organization is to transition Firemacs to Mozilla's Webextensions (Electrolyis/e10s) technology before 2018 when Firefox 57 is released without support for the legacy API's Firemacs depends upon.
